@@ -1,0 +1,7 @@
+feedback:
+    pattern:  /feedback
+    defaults: { _controller: CorePagesBundle:Feedback:index }
+
+errors:
+    pattern:  /errors
+    defaults: { _controller: CorePagesBundle:Errors:index }

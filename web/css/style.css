@@ -1,0 +1,17 @@
+@import 'bootstrap.css';
+
+body { padding-top: 60px; background-color: rgb(245, 244, 239); }
+.wrapper { margin: auto auto; width: 960px; }
+
+article { margin: 2em auto; background-color: white; -moz-border-radius: 10px; padding: 1em; }
+article > header h1 { padding: 0; margin: 0; font-size: 1.5em; text-transform: uppercase; color: rgb(0, 153, 51); }
+article > header { margin-bottom: .5em; border-bottom: 5px solid rgb(245, 244, 239); }
+
+ul.stats { margin: 0; padding: 0; float: right; }
+ul.stats li { display: inline-block; list-style-type: none; margin: 3px; padding: 5px; background-color: #eaeaea; text-align: center; -moz-border-radius: 5px; }
+ul.stats li .nb { font-weight: bold; font-size: 1.5em; }
+ul.stats li .infos { display: block; color: DarkGray; }
+
+ul.errors { margin: 0; padding: 0; }
+ul.errors > li { list-style-type: none; margin: 5px; padding: 1em; background-color: rgb(255, 255, 153); }
+ul.errors > li .filedetails { float: right; }

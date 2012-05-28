@@ -1,0 +1,15 @@
+_welcome:
+    pattern:  /
+    defaults: { _controller: CorePagesBundle:Pages:index }
+
+fos_user:
+    resource: "@CoreUserBundle/Resources/config/fos_user_routing.yml"
+    prefix: /
+
+CoreUserBundle:
+    resource: "@CoreUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+CorePagesBundle:
+    resource: "@CorePagesBundle/Resources/config/routing.yml"
+    prefix:   /

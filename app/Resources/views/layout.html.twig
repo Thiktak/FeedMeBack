@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block title %}Feed Me Back{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+    <link type="text/css" rel="stylesheet" media="screen" href="{{ asset('css/style.css') }}" />
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">FeedMeBack</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Retour vers le site</a></li>
+              <li class="divider-vertical"></li>
+              <li><a href="{{ path('feedback') }}">FeedBacks <span class="badge badge-inverse">0</span></a></li>
+              <li class="divider-vertical"></li>
+              <li><a href="{{ path('errors') }}">Erreurs <span class="badge badge-inverse">0</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="content">
+      <div class="wrapper">
+        {% block body %} ? {% endblock %}
+      </div>
+    </div>
+
+
+    <footer id="footer">
+      <div class="wrapper">
+        &copy; Olivarès Georges
+      </div>
+    </footer>
+  </body>
+</html>

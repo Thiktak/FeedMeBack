@@ -1,0 +1,56 @@
+{% extends "::layout.html.twig" %}
+
+{% block body %}
+        <h1>', $datas->_page, '</h1>
+
+        <ul class="stats btngroup">
+          <li>
+            <span class="nb">0</span>
+            <span class="infos">feedback</span>
+          </li>
+          <li>
+            <span class="nb">0</span>
+            <span class="infos">affichages</span>
+          </li>
+          <li>
+            <span class="nb">0</span>
+            <span class="infos">erreurs détectées</span>
+          </li>
+          <li>
+            <span class="nb">0</span>
+            <span class="infos">pages avec des erreurs</span>
+          </li>
+        </ul>
+
+        <br /><br />
+
+        <article>
+          <header>
+            <h1>Les erreurs</h1>
+          </header>
+          <ul class="errors">';
+
+  if( isset($datas->errors) )
+    foreach( (array) $datas->errors as $errors ) {
+      echo '
+            <li>
+              <p class="filedetails">
+                <span class="file">', $errors[2][2], '</span>
+                <span class="line">', $errors[2][3], '</span>
+              </p>
+              <h2>', $errors[0], '</h2>
+              ', $errors[2][0], '
+            </li>';
+    }
+
+  echo '
+          </ul>
+        </article>
+        
+        <article>
+          <header>
+            <h1>Le code source de la page</h1>
+          </header>
+          <pre style="height: 250px; overflow: auto; padding: 10px;">', htmlentities($datas->html), '</pre>
+        </article>
+{% endblock %}

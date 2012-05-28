@@ -1,0 +1,42 @@
+{% extends "::layout.html.twig" %}
+
+{% block body %}
+
+<style>
+  .adminmenu { text-align: center; }
+  .adminmenu > li { margin: 1em; }
+  .adminmenu > li > a { display: block; min-width: 100px; min-height: 60px; padding: 10px 0; }
+  .adminmenu > li > a:hover { text-decoration: none; }
+  .adminmenu > li figure { display: block; margin: 0; height: 60px; margin-right: 5px; }
+  .adminmenu > li figure img { max-height: 100%; max-width: 100%; }
+  .adminmenu > li a .caret { position: absolute; right: 5px; top: 45%; }
+  .adminmenu > li ul { text-align: left; }
+</style>
+
+<header>
+  <h1>Administration</h1>
+</header>
+
+<ul class="adminmenu">
+
+  {% for key, module in modules %}
+
+  <li class="btn dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      <figure><img src="{{ asset('img/' ~ module.image ) }}" alt="{{ module.text }}" /></figure>
+      {{ module.text }}
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      {% for path, link in module.actions %}
+        {% if link == '-' %}
+        <li class="divider"></li>
+        {% else %}
+        <li><a href="{{ path(path) }}">{{ link|raw }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </li>
+  {% endfor %}
+
+{% endblock %}
